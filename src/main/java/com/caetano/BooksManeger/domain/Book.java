@@ -1,4 +1,4 @@
-package com.caetano.demo.domain;
+package com.caetano.BooksManeger.domain;
 
 
 import jakarta.persistence.Entity;

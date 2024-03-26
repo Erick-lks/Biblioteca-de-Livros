@@ -1,6 +1,6 @@
 package Client;
 
-import com.caetano.demo.domain.Book;
+import com.caetano.BooksManeger.domain.Book;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.*;
@@ -11,7 +11,7 @@ import java.util.List;
 @Log4j2
 public class SpringClient {
     public static void main(String[] args) {
-        ResponseEntity<List<Book>> listExchange = new RestTemplate().exchange("http://localhost:8080/books/all",
+        ResponseEntity<List<Book>> listExchange = new RestTemplate().exchange("http://localhost:8080/books/list",
                 HttpMethod.GET,
                 null, new ParameterizedTypeReference<List<Book>>() {
                 });

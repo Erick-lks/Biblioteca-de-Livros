@@ -1,15 +1,14 @@
-package com.caetano.demo.controller;
+package com.caetano.BooksManeger.controller;
 
 
-import com.caetano.demo.domain.Book;
-import com.caetano.demo.request.BookPostRequestBody;
-import com.caetano.demo.request.BookPutRequestBody;
-import com.caetano.demo.service.ServiceBook;
-import com.caetano.demo.util.DataUtil;
+import com.caetano.BooksManeger.domain.Book;
+import com.caetano.BooksManeger.request.BookPostRequestBody;
+import com.caetano.BooksManeger.request.BookPutRequestBody;
+import com.caetano.BooksManeger.service.ServiceBook;
+import com.caetano.BooksManeger.util.DataUtil;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -28,14 +27,14 @@ public class BookController {
     private final DataUtil dataUtil;
     private final ServiceBook serviceBook;
 
-    //localhost:8080/book/list
+
     @GetMapping
     public Page<Book> list(Pageable pageable) {
         log.info(dataUtil.fomartLocalDateTimeToBaseStyle(LocalDateTime.now()));
         return serviceBook.listAll(pageable);
     }
 
-    @GetMapping(path = "/all")
+    @GetMapping(path = "/list")
     public ResponseEntity<List<Book>> listAllNonPageable( ) {
         log.info(dataUtil.fomartLocalDateTimeToBaseStyle(LocalDateTime.now()));
         return ResponseEntity.ok(serviceBook.listAllNonPageable());

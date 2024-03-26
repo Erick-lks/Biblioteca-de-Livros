@@ -1,6 +1,6 @@
-package com.caetano.demo.repository;
+package com.caetano.BooksManeger.repository;
 
-import com.caetano.demo.domain.Book;
+import com.caetano.BooksManeger.domain.Book;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

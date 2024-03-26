@@ -1,4 +1,4 @@
-package com.caetano.demo.exceptions;
+package com.caetano.BooksManeger.exceptions;
 
 
 import lombok.Getter;

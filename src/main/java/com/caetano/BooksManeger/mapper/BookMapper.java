@@ -1,9 +1,9 @@
-package com.caetano.demo.mapper;
+package com.caetano.BooksManeger.mapper;
 
 
-import com.caetano.demo.domain.Book;
-import com.caetano.demo.request.BookPostRequestBody;
-import com.caetano.demo.request.BookPutRequestBody;
+import com.caetano.BooksManeger.domain.Book;
+import com.caetano.BooksManeger.request.BookPostRequestBody;
+import com.caetano.BooksManeger.request.BookPutRequestBody;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

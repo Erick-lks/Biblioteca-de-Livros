@@ -1,4 +1,4 @@
-package com.caetano.demo.Configurer;
+package com.caetano.BooksManeger.Configurer;
 
 
 import org.springframework.context.annotation.Configuration;

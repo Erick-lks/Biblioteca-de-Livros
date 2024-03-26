@@ -1,7 +1,6 @@
-package com.caetano.demo.util;
+package com.caetano.BooksManeger.util;
 
 
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;

@@ -1,12 +1,12 @@
-package com.caetano.demo.service;
+package com.caetano.BooksManeger.service;
 
-import com.caetano.demo.domain.Book;
+import com.caetano.BooksManeger.domain.Book;
 
-import com.caetano.demo.exceptions.BadRequestException;
-import com.caetano.demo.mapper.BookMapper;
-import com.caetano.demo.repository.BookRepository;
-import com.caetano.demo.request.BookPostRequestBody;
-import com.caetano.demo.request.BookPutRequestBody;
+import com.caetano.BooksManeger.exceptions.BadRequestException;
+import com.caetano.BooksManeger.mapper.BookMapper;
+import com.caetano.BooksManeger.repository.BookRepository;
+import com.caetano.BooksManeger.request.BookPostRequestBody;
+import com.caetano.BooksManeger.request.BookPutRequestBody;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
