@@ -34,7 +34,7 @@ public class BookController {
         return serviceBook.listAll(pageable);
     }
 
-    @GetMapping(path = "/list")
+    @GetMapping(path = "/all")
     public ResponseEntity<List<Book>> listAllNonPageable( ) {
         log.info(dataUtil.fomartLocalDateTimeToBaseStyle(LocalDateTime.now()));
         return ResponseEntity.ok(serviceBook.listAllNonPageable());

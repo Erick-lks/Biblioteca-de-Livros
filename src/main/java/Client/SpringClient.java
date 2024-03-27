@@ -11,7 +11,7 @@ import java.util.List;
 @Log4j2
 public class SpringClient {
     public static void main(String[] args) {
-        ResponseEntity<List<Book>> listExchange = new RestTemplate().exchange("http://localhost:8080/books/list",
+        ResponseEntity<List<Book>> listExchange = new RestTemplate().exchange("http://localhost:8080/books/all",
                 HttpMethod.GET,
                 null, new ParameterizedTypeReference<List<Book>>() {
                 });
