@@ -12,6 +12,9 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import java.util.List;
 import java.util.Optional;
 
+import static com.caetano.BooksManeger.util.BookCreator.bookCreaterToBeSaved;
+import static com.caetano.BooksManeger.util.BookCreator.bookCreaterUpdate;
+
 
 @DataJpaTest
 @DisplayName("Test for Book Repository")
@@ -24,7 +27,7 @@ class BookRepositoryTest {
     @DisplayName("Save persist book when Successful")
     void save_PersistBook_WhenSuccessful() {
 
-        Book bookToBeSaved = bookCreater();
+        Book bookToBeSaved = bookCreaterToBeSaved();
 
         Book booksaved = this.bookRepository.save(bookToBeSaved);
 
@@ -41,7 +44,7 @@ class BookRepositoryTest {
     @DisplayName("Save update book when Successful")
     void save_UpdateBook_WhenSuccessful() {
 
-        Book bookToBeSaved = bookCreater();
+        Book bookToBeSaved = bookCreaterUpdate();
 
         Book booksaved = this.bookRepository.save(bookToBeSaved);
 
@@ -62,7 +65,7 @@ class BookRepositoryTest {
     @DisplayName("Delete remove book when Successful")
     void delete_RemoveBook_WhenSuccessful() {
 
-        Book bookToBeSaved = bookCreater();
+        Book bookToBeSaved = bookCreaterToBeSaved();
 
         Book booksaved = this.bookRepository.save(bookToBeSaved);
 
@@ -79,7 +82,7 @@ class BookRepositoryTest {
     @DisplayName("Find By list of the books when Successful")
     void findByName_ReturnListOfTheBooks_WhenSuccessful() {
 
-        Book bookToBeSaved = bookCreater();
+        Book bookToBeSaved = bookCreaterToBeSaved();
 
         Book booksaved = this.bookRepository.save(bookToBeSaved);
 
@@ -120,10 +123,4 @@ class BookRepositoryTest {
     }
 
 
-    private Book bookCreater() {
-        return Book.builder()
-                .nameBook("The Walking Dead")
-                .build();
-
-    }
 }

@@ -24,19 +24,17 @@ import java.util.List;
 @Log4j2
 public class BookController {
 
-    private final DataUtil dataUtil;
+
     private final ServiceBook serviceBook;
 
 
     @GetMapping
     public Page<Book> list(Pageable pageable) {
-        log.info(dataUtil.fomartLocalDateTimeToBaseStyle(LocalDateTime.now()));
         return serviceBook.listAll(pageable);
     }
 
     @GetMapping(path = "/all")
     public ResponseEntity<List<Book>> listAllNonPageable( ) {
-        log.info(dataUtil.fomartLocalDateTimeToBaseStyle(LocalDateTime.now()));
         return ResponseEntity.ok(serviceBook.listAllNonPageable());
     }
     @GetMapping(path = "/{id}")
