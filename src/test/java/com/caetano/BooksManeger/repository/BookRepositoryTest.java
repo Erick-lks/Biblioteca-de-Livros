@@ -1,6 +1,7 @@
 package com.caetano.BooksManeger.repository;
 
 import com.caetano.BooksManeger.domain.Book;
+import jakarta.validation.ConstraintViolationException;
 import lombok.extern.log4j.Log4j2;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -101,6 +102,19 @@ class BookRepositoryTest {
 
         Assertions.assertThat(books).isEmpty();
 
+
+
+    }
+
+    @Test
+    @DisplayName("Save throw ConstraintViolationException when NameBook is Empty")
+    void save_ThrowConstraintViolationException_WhenNameIsEmpty() {
+
+       Book book = new Book();
+
+       Assertions.assertThatExceptionOfType(ConstraintViolationException.class)
+               .isThrownBy(() -> this.bookRepository.save(book))
+               .withMessageContaining("the Book cannot is Empty or null");
 
 
     }
